@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stickersfordecor.com</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f6ffe8;
+      color:#143d1f;
+      line-height:1.6;
+    }
+
+    /* TOP BAR */
+    .topbar{
+      background:#d9ff7a;
+      text-align:center;
+      padding:10px;
+      font-weight:bold;
+      border-bottom:2px solid #b7e14f;
+    }
+
+    /* HEADER */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 8%;
+      background:white;
+      border-bottom:3px solid #d9ff7a;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:bold;
+      font-size:1.3rem;
+    }
+
+    .logo img{
+      height:60px;
+    }
+
+    nav a{
+      margin-left:20px;
+      text-decoration:none;
+      color:#143d1f;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#2e7d32;
+    }
+
+    /* FRONT PAGE IMAGE */
+    .frontpage img{
+      width:100%;
+      display:block;
+      border-bottom:4px solid #d9ff7a;
+    }
+
+    section{
+      padding:60px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.2rem;
+      margin-bottom:35px;
+      color:#1b5e20;
+    }
+
+    /* CATEGORY */
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:20px;
+    }
+
+    .category{
+      background:white;
+      border:2px solid #d9ff7a;
+      border-radius:22px;
+      text-align:center;
+      padding:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .category img{
+      width:100%;
+      border-radius:16px;
+      margin-bottom:12px;
+    }
+
+    .category h3{
+      color:#143d1f;
+    }
+
+    /* PRODUCTS */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .product{
+      background:white;
+      border-radius:24px;
+      border:2px solid #d9ff7a;
+      padding:18px;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      transition:0.25s;
+    }
+
+    .product:hover{
+      transform:translateY(-6px);
+    }
+
+    .product img{
+      width:100%;
+      border-radius:18px;
+      margin-bottom:15px;
+    }
+
+    .product h3{
+      margin-bottom:8px;
+    }
+
+    .price{
+      color:#2e7d32;
+      font-weight:bold;
+      margin-bottom:12px;
+      font-size:1.1rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 24px;
+      background:#2e7d32;
+      color:white;
+      text-decoration:none;
+      border-radius:999px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1b5e20;
+    }
+
+    /* FEATURES */
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .feature{
+      background:white;
+      border:2px solid #d9ff7a;
+      border-radius:24px;
+      padding:28px;
+      text-align:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .feature .icon{
+      font-size:2rem;
+      margin-bottom:12px;
+    }
+
+    /* NEWSLETTER */
+    .newsletter{
+      background:linear-gradient(135deg,#e8ff9f,#c8ff66);
+      border-radius:30px;
+      text-align:center;
+      padding:45px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .newsletter h2{
+      margin-bottom:12px;
+      color:#143d1f;
+    }
+
+    .newsletter p{
+      margin-bottom:20px;
+    }
+
+    .newsletter input{
+      padding:14px;
+      width:260px;
+      max-width:90%;
+      border-radius:999px;
+      border:2px solid #7bc043;
+      outline:none;
+      margin-right:10px;
+    }
+
+    .newsletter button{
+      padding:14px 24px;
+      border:none;
+      border-radius:999px;
+      background:#2e7d32;
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .newsletter button:hover{
+      background:#1b5e20;
+    }
+
+    /* ABOUT */
+    .about{
+      text-align:center;
+      background:white;
+      border:2px solid #d9ff7a;
+      border-radius:30px;
+      padding:40px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    /* CONTACT */
+    .contact{
+      text-align:center;
+      font-size:1.05rem;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#143d1f;
+      color:#eaffb5;
+      text-align:center;
+      padding:40px 20px;
+      margin-top:40px;
+    }
+
+    footer img{
+      height:60px;
+      margin-bottom:10px;
+    }
+
+    footer a{
+      color:#d9ff7a;
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
+
+    @media (max-width:768px){
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      nav a{
+        margin:8px 10px;
+      }
+
+      .newsletter input{
+        margin:0 0 12px 0;
+        width:100%;
+      }
+
+      .newsletter button{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    🚚 Free shipping on orders over €20!
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <span>stickersfordecor.com</span>
+    </div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#categories">Shop</a>
+      <a href="#best">Best Sellers</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- FRONT PAGE IMAGE -->
+  <section class="frontpage">
+    <img src="frontpage.png" alt="Front page design">
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories">
+    <h2 class="section-title">Shop by Category</h2>
+
+    <div class="categories">
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=400&q=80" alt="Laptop">
+        <h3>Laptop</h3>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Animals">
+        <h3>Animals</h3>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80" alt="Nature">
+        <h3>Nature</h3>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=400&q=80" alt="Aesthetic">
+        <h3>Aesthetic</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section id="best">
+    <h2 class="section-title">Best Sellers</h2>
+
+    <div class="products">
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80" alt="Green Vibes">
+        <h3>Green Vibes Pack</h3>
+        <p class="price">€7.99</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80" alt="Cute Animals">
+        <h3>Cute Animal Pack</h3>
+        <p class="price">€6.99</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=500&q=80" alt="Laptop Pack">
+        <h3>Laptop Vibes Pack</h3>
+        <p class="price">€7.49</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <h2 class="section-title">Why StickersForDecor?</h2>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon">🌱</div>
+        <h3>Eco-Friendly</h3>
+        <p>Greener materials whenever possible.</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">💧</div>
+        <h3>Waterproof</h3>
+        <p>Durable and long-lasting stickers.</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🚚</div>
+        <h3>Fast Shipping</h3>
+        <p>Across Spain & Europe.</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🎨</div>
+        <h3>Unique Designs</h3>
+        <p>Exclusive sticker artwork.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section>
+    <div class="newsletter">
+      <h2>Join our community! 💚</h2>
+      <p>Get 10% off your first order.</p>
+
+      <input type="email" placeholder="Your email address">
+      <button>Subscribe</button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about">
+      <h2 class="section-title">About Us</h2>
+
+      <p>
+        At <strong>stickersfordecor.com</strong> we believe every room,
+        notebook, laptop, and water bottle deserves personality.
+        Our mission is to bring creativity, color, and green vibes into
+        everyday life through beautiful decorative stickers.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact">
+      <p>📧 hello@stickersfordecor.com</p>
+      <p>📍 Based in Spain</p>
+      <p>📱 Instagram: @stickersfordecor</p>
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="Footer logo">
+
+    <p><strong>stickersfordecor.com</strong></p>
+    <p>Stick • Decorate • Smile 💚</p>
+    <p>© 2026 stickersfordecor.com — All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
